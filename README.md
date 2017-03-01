@@ -1,2 +1,1 @@
-# doubanMovie
-angular-doubanMovie
+# Angular Boilerplate
