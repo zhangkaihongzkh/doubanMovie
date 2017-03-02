@@ -26,7 +26,7 @@
 			var page = parseInt($routeParams.page);//当前的页码数
 			var start = (page - 1) * count;//起始的页数
 
-			var doubanAPI = 'http://api.douban.com/v2/movie/' + $routeParams.category;
+			var doubanAPI = 'https://api.douban.com/v2/movie/' + $routeParams.category;
 
 			//控制器用于暴露数据和行为
 
