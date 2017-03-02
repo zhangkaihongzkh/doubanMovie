@@ -9,7 +9,7 @@
 			var fnName = Math.random().toString().replace('.','');//随机函数的名字
 
 			var fnSuffix = 'my_json_cb_' + fnName;
-			$window[fnSuffix] = callback;
+
 			//2.将url与data进行拼接
 			//当用户传来的url带有问号时 --url : www.baidu.com?abc=78
 			var queryString = url.indexOf('?') == -1 ? '?':'&';
@@ -22,6 +22,16 @@
 			//4.生成script标签
 			var scriptElement =  $document[0].createElement('script');
 			scriptElement.src = url + queryString;
+
+			//不推荐
+			//$window[fnSuffix] = callback;
+			//挂载最晚需要在append之前
+			$window[fnSuffix] = function(JSONPData){
+				callback(JSONPData);//自动执行
+				//销毁script节点
+				$document[0].body.removeChild(scriptElement);
+			}
+
 			//5.将script放在页面中
 			$document[0].body.appendChild(scriptElement);
 		};

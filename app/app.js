@@ -14,7 +14,7 @@ config(['$routeProvider', function($routeProvider) {
 }])
 
 
-
+//导航栏
 .controller('Nav', [
 	'$scope',
 	'$location',
@@ -22,12 +22,28 @@ config(['$routeProvider', function($routeProvider) {
 		$scope.$location = $location;
 		$scope.$watch('$location.path()', function(newValue) {
 			if(newValue.startsWith('/in_theaters')){
-				$scope.type = 'in_theaters'
+				$scope.type = 'in_theaters';
 			} else if(newValue.startsWith('/coming_soon')){
-				$scope.type = 'coming_soon'
+				$scope.type = 'coming_soon';
 			}else if(newValue.startsWith('/top250')){
-				$scope.type = 'top250'
+				$scope.type = 'top250';
+			}else if(newValue.startsWith('/search')){//搜索结果
+				$scope.type = 'search';
 			}
 		});
 	}
-]);
+])
+
+//搜索模块
+.controller('SearchFunc', [
+	'$scope',
+	'$route',
+	function($scope,$route){
+		$scope.input = '';//搜索内容
+		//搜索功能
+		$scope.search = function(){
+			$route.updateParams({category:'search',q:$scope.input});
+			//$scope.input = $routeParams.q;
+			//console.log($scope.input);
+	}
+}])

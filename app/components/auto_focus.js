@@ -19,18 +19,18 @@
 				restrict: 'A', // E = Element, A = Attribute, C = Class, M = Comment
 
 				link: function($scope, iElm, iAttrs, controller) {
-					var aLink = iElm.children().attr('href');
-					var type = aLink.replace(/#(\/.+?)\/\d+/,'$1');
-					/*console.log(type);
-					console.log(path);
-					console.log(aLink);*/
-					//当前渲染的页面location也iElm的子节点a的href相同时，为该iElm增加class样式
-					if(path.startsWith(type)){
-						iElm.addClass('active');
-					}
-					iElm.on('click',function(){
-						iElm.parent().children().removeClass('active');
-						iElm.addClass('active');
+					$scope.$location = $location;
+					$scope.$watch('$location.path()', function(newValue) {
+						var aLink = iElm.children().attr('href');
+						var type = aLink.replace(/#(\/.+?)\/\d+/,'$1');
+						/*console.log(type);
+						console.log(path);
+						console.log(aLink);*/
+						//当前渲染的页面location也iElm的子节点a的href相同时，为该iElm增加class样式
+						if(newValue.startsWith(type)){
+							iElm.parent().children().removeClass('active');
+							iElm.addClass('active');
+						}
 					});
 				}
 			};

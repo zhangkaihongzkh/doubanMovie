@@ -34,7 +34,7 @@
 			//控制器用于暴露数据和行为
 
 			//标题
-			$scope.title = '';
+			$scope.title = 'Loading...';
 			$scope.message = '';
 
 			$scope.subjects = {};
@@ -48,8 +48,9 @@
 			$scope.loading = true;
 			//自定义的模块
 			HttpService.jsonp(doubanAPI,{
-				start:start,
+				start:start,	// 1./:category/:q 2.www.baidu.com?q=12313
 				count:count,
+				q:$routeParams.q,//$routeParams的数据来源：1.路由匹配出来 2.?参数
 			},function(data){
 				$scope.title = data.title;
 				$scope.subjects = data.subjects;
