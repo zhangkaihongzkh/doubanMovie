@@ -2,7 +2,10 @@
 
 	'use strict';
 
-	var module = angular.module('movieCat.movie_list', ['ngRoute','movieCat.services.http']);
+	var module = angular.module('movieCat.movie_list', [
+		'ngRoute',
+		'movieCat.services.http',
+		]);
 
 	//配置路由
 	module.config(['$routeProvider', function($routeProvider) {
