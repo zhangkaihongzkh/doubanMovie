@@ -4,7 +4,9 @@
 angular.module('movieCat', [
   'ngRoute',
   //'movieCat.in_theaters',
+  'movieCat.movie_detail',
   'movieCat.movie_list',
+
   'movieCat.directive.auto_focus',//自动监听导航栏变化
 
 ]).

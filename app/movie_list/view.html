@@ -1,7 +1,7 @@
 <h1 class="page-header">{{title}}</h1>
 <h2 ng-if="message">{{message}}</h2>
-<div class="list-group" ng-controller="InTheatersController">
-  <a class="list-group-item" ng-repeat="item in subjects">
+<div class="list-group">
+  <a href="#/detail/{{item.id}}" class="list-group-item" ng-repeat="item in subjects">
   	<span class="badge">{{item.rating.average}}</span>
     <div class="media">
 	  <div class="media-left">
@@ -11,7 +11,7 @@
 	    <h4 class="media-heading">{{item.title}}</h4>
 	    <p>
 	    	<span>原名：{{item.original_title}}</span>
-	    	<span>上映年份：{{item.year}} </span>
+	    	<span>年代：{{item.year}} </span>
 	    </p>
 	    <p>
 	    	导演：
@@ -32,18 +32,19 @@
 </div>
 
 <div class="shadow" ng-show="loading">
-		<div class="sk-cube-grid">
-		  <div class="sk-cube sk-cube1"></div>
-		  <div class="sk-cube sk-cube2"></div>
-		  <div class="sk-cube sk-cube3"></div>
-		  <div class="sk-cube sk-cube4"></div>
-		  <div class="sk-cube sk-cube5"></div>
-		  <div class="sk-cube sk-cube6"></div>
-		  <div class="sk-cube sk-cube7"></div>
-		  <div class="sk-cube sk-cube8"></div>
-		  <div class="sk-cube sk-cube9"></div>
-		</div>
+	<div class="sk-cube-grid">
+	  <div class="sk-cube sk-cube1"></div>
+	  <div class="sk-cube sk-cube2"></div>
+	  <div class="sk-cube sk-cube3"></div>
+	  <div class="sk-cube sk-cube4"></div>
+	  <div class="sk-cube sk-cube5"></div>
+	  <div class="sk-cube sk-cube6"></div>
+	  <div class="sk-cube sk-cube7"></div>
+	  <div class="sk-cube sk-cube8"></div>
+	  <div class="sk-cube sk-cube9"></div>
 	</div>
+</div>
+
 <div ng-show="!loading">
 	<p>共：{{totalNum}}条记录，当前第：{{currentPage}}页，共：{{totalPage}}页</p>
 	<nav aria-label="..." class="text-center">

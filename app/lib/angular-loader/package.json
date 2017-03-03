@@ -1,0 +1,106 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "angular-loader",
+        "scope": null,
+        "escapedName": "angular-loader",
+        "name": "angular-loader",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "H:\\git\\doubanMovie\\app"
+    ]
+  ],
+  "_from": "angular-loader@latest",
+  "_id": "angular-loader@1.6.2",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/angular-loader",
+  "_nodeVersion": "6.9.5",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/angular-loader-1.6.2.tgz_1486476018354_0.602813804987818"
+  },
+  "_npmUser": {
+    "name": "angularcore",
+    "email": "angular-core+npm@google.com"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "angular-loader",
+    "scope": null,
+    "escapedName": "angular-loader",
+    "name": "angular-loader",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular-loader/-/angular-loader-1.6.2.tgz",
+  "_shasum": "4b114dcfd63769029a67aebb8e2cbcb0d7c83024",
+  "_shrinkwrap": null,
+  "_spec": "angular-loader",
+  "_where": "H:\\git\\doubanMovie\\app",
+  "author": {
+    "name": "Angular Core Team",
+    "email": "angular-core+npm@google.com"
+  },
+  "bugs": {
+    "url": "https://github.com/angular/angular.js/issues"
+  },
+  "dependencies": {},
+  "description": "AngularJS module for asynchronously loading modules",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "4b114dcfd63769029a67aebb8e2cbcb0d7c83024",
+    "tarball": "https://registry.npmjs.org/angular-loader/-/angular-loader-1.6.2.tgz"
+  },
+  "gitHead": "60685231bd0ae0bbf7fa74a71b136358a310a23a",
+  "homepage": "http://angularjs.org",
+  "jspm": {
+    "shim": {
+      "angular-loader": {
+        "deps": [
+          "angular"
+        ]
+      }
+    }
+  },
+  "keywords": [
+    "angular",
+    "framework",
+    "browser",
+    "loader",
+    "client-side"
+  ],
+  "license": "MIT",
+  "main": "angular-loader.js",
+  "maintainers": [
+    {
+      "name": "angularcore",
+      "email": "angular-core+npm@google.com"
+    },
+    {
+      "name": "petebd",
+      "email": "pete@bacondarwin.com"
+    }
+  ],
+  "name": "angular-loader",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular/angular.js.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.6.2"
+}

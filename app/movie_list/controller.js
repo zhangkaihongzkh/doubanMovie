@@ -2,23 +2,24 @@
 
 	'use strict';
 
-	var module = angular.module('movieCat.movie_list', [
-		'ngRoute',
-		'movieCat.services.http',
+	var module = angular.module(
+		'movieCat.movie_list', [
+			'ngRoute',
+			'movieCat.services.http',
 		]);
 
 	//配置路由
 	module.config(['$routeProvider', function($routeProvider) {
 	  $routeProvider.when('/:category/:page', {
 	    templateUrl: 'movie_list/view.html',
-	    controller: 'InTheatersController'
+	    controller: 'MovieListController'
 	  });
 	}]);
 
 
 
 
-	module.controller('InTheatersController', [
+	module.controller('MovieListController', [
 		'$scope',
 		'$route',		//路由模块
 		'$routeParams',//路由参数
@@ -44,18 +45,25 @@
 			$scope.totalPage = 0;
 			//当前的页数
 			$scope.currentPage = page;
+
+			if(isNaN(page)){
+				$scope.currentPage = 0;
+
+			}
 			//加载是否完成 true表示正在加载
 			$scope.loading = true;
 			//自定义的模块
 			HttpService.jsonp(doubanAPI,{
 				start:start,	// 1./:category/:q 2.www.baidu.com?q=12313
 				count:count,
+				city:'广州',
 				q:$routeParams.q,//$routeParams的数据来源：1.路由匹配出来 2.?参数
 			},function(data){
 				$scope.title = data.title;
 				$scope.subjects = data.subjects;
 				//console.log(data);
 				$scope.totalNum = data.total;
+
 				$scope.totalPage = Math.ceil($scope.totalNum / count);//全部请求完后计算总共几页
 				$scope.loading = false;
 				//重新绑定,重新同步
