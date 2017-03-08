@@ -24,13 +24,14 @@
 		'$route',		//路由模块
 		'$routeParams',//路由参数
 		'HttpService',
-
-		function($scope,$route,$routeParams,HttpService) {
-			var count = 10;//每一页的记录个数
+		'appConfig',//配置项
+		function($scope,$route,$routeParams,HttpService,appConfig) {
+			//console.log(appConfig);
+			var count = appConfig.pageSize;//每一页的记录个数
 			var page = parseInt($routeParams.page);//当前的页码数
 			var start = (page - 1) * count;//起始的页数
 
-			var doubanAPI = 'https://api.douban.com/v2/movie/' + $routeParams.category;
+			var doubanAPI = appConfig.listApiAdress + $routeParams.category;
 
 			//控制器用于暴露数据和行为
 

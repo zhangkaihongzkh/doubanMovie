@@ -9,8 +9,16 @@ angular.module('movieCat', [
 
   'movieCat.directive.auto_focus',//自动监听导航栏变化
 
-]).
-config(['$routeProvider', function($routeProvider) {
+])
+//公用配置项
+.constant('appConfig',{
+	pageSize: 10,
+	listApiAdress:'https://api.douban.com/v2/movie/',
+	detailApiAdress:'https://api.douban.com/v2/movie/subject/',
+	//      /v2/movie/subject/:id
+	//		/v2/movie/in_theaters/1
+})
+.config(['$routeProvider', function($routeProvider) {
 	//初始化跳转到第一个页面
   $routeProvider.otherwise({redirectTo: '/in_theaters/1'});
 }])
@@ -40,11 +48,31 @@ config(['$routeProvider', function($routeProvider) {
 .controller('SearchFunc', [
 	'$scope',
 	'$route',
-	function($scope,$route){
+	'$routeParams',
+	'$location',
+	function($scope,$route,$routeParams,$location){
 		$scope.input = '';//搜索内容
+		$scope.$location = $location;//用于监听地址变化
 		//搜索功能
 		$scope.search = function(){
-			$route.updateParams({category:'search',q:$scope.input});
+			if(!$routeParams.category){//当前在详情页面
+				//console.log(1111);
+				//$location.path('/detail/').replace('/search/');
+				var tmpUrl = '/search/1?q='+$scope.input;
+				$location.url(tmpUrl);
+				//$route.updateParams({category:'search',q:$scope.input});
+				/*console.log($location.path());
+				console.log($scope.input);
+				console.log(tmpUrl);*/
+				//$route.updateParams({q:$scope.input});
+				//$route.updateParams({q:$scope.input});
+				//http://localhost:8090/doubanMovie/app/index.html#/search/1?q=aaa
+
+			}else{//当前在列表页面
+				$route.updateParams({category:'search',q:$scope.input});
+
+			}
+
 			//$scope.input = $routeParams.q;
 			//console.log($scope.input);
 	}
