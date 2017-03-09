@@ -19,8 +19,9 @@
     <div class="container-fluid">
         <div class="row">
             <ul class="list-group">
-                <li class="list-group-item" ng-repeat="filmItem in personDetail.works">
-                    <a href="#/detail/{{filmItem.subject.id}}">
+                <a href="#/detail/{{filmItem.subject.id}}" class="list-group-item" ng-repeat="filmItem in personDetail.works">
+                    <span class="badge">{{filmItem.subject.rating.average}}</span>
+                    <div class="media">
                         <div class="media-left media-middle">
                             <img class="media-object" ng-src="{{filmItem.subject.images.medium}}" alt="{{filmItem.subject.images.alt}}">
                         </div>
@@ -31,10 +32,9 @@
                             <p><strong>类型：</strong><span ng-repeat="typeItem in filmItem.subject.genres">{{typeItem}}{{$last?'':'、 '}}</span></p>
                             <p><strong>年代：</strong>{{filmItem.subject.year}}</p>
                         </div>
-                    </a>
-                </li>
+                    </div>
+                </a>
             </ul>
-
         </div>
     </div>
 </div>

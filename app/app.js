@@ -42,6 +42,8 @@ angular.module('movieCat', [
                 $scope.type = 'top250';
             } else if (newValue.startsWith('/search')) { //搜索结果
                 $scope.type = 'search';
+            }else if(newValue.startsWith('/detail')){
+            	$scope.type = 'detail';
             }
         });
     }

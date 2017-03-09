@@ -23,7 +23,7 @@
             <div class="col-sm-6 col-md-3" ng-repeat="people in filmDetail.casts">
                 <a href="#/person/{{people.id}}">
                     <div class="thumbnail">
-                        <img src="{{people.avatars.large}}" alt="{{people.name}}">
+                        <img ng-src="{{people.avatars.large}}" alt="{{people.name}}">
                         <div class="caption">
                             <p class="text-center">{{people.name}}</p>
                         </div>
