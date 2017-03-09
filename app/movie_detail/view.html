@@ -1,51 +1,57 @@
-<div class="jumbotron" ng-show="!loading">
-  <h1>{{filmDetail.title}}</h1>
-
-  <ul class="media-list">
-	  <li class="media">
-	    <div class="media-left col-xs-12" >
-	       <img class="media-object" ng-src="{{filmDetail.images.large}}" alt="{{filmDetail.title}}">
-	    </div>
-	    <div class="media-body">
-	      <p><strong>简介：</strong>{{filmDetail.summary}}</p>
-	      <p><strong>又名：</strong>{{filmDetail.aka}}</p>
-	      <p><strong>制片国家/地区：</strong>{{filmDetail.countries}}</p>
-	      <p><strong>领衔主演：</strong><span ng-repeat="people in filmDetail.casts">{{people.name}}{{$last?'':'、' }}</span></p>
-	      <p><strong>影片类型：</strong>{{filmDetail.genres}}</p>
-	      <p><strong>看过人数：</strong>{{filmDetail.collect_count}}人</p>
-	      <p><strong>想看人数：</strong>{{filmDetail.wish_count}}人</p>
-	      <p><strong>评星数：</strong>{{filmDetail.rating.stars}}</p>
-	      <p><strong>影讯页URL：</strong><a href="{{filmDetail.schedule_url}}">{{filmDetail.schedule_url}}</a></p>
-	    </div>
-	  </li>
-	</ul>
-
-	<h2>领衔主演</h2>
-	<div class="container-fluid">
-		<div class="row">
-		  <div class="col-sm-6 col-md-3" ng-repeat="people in filmDetail.casts">
-		    <div class="thumbnail" >
-		      <img src="{{people.avatars.medium}}" alt="{{people.name}}">
-		      <div class="caption">
-		        <p class="text-center">{{people.name}}</p>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-	</div>
+<div ng-show="!loading">
+    <h1>{{filmDetail.title}}</h1>
+    <div class="container">
+        <div class="row">
+            <div class="thumbnail">
+                <img ng-src="{{filmDetail.images.large}}" alt="{{filmDetail.title}}">
+                <div class="caption">
+                    <p><strong>简介：</strong>{{filmDetail.summary}}</p>
+                    <p><strong>又名：</strong>{{filmDetail.aka}}</p>
+                    <p><strong>制片国家/地区：</strong>{{filmDetail.countries}}</p>
+                    <p><strong>领衔主演：</strong><span ng-repeat="people in filmDetail.casts">{{people.name}}{{$last?'':'、' }}</span></p>
+                    <p><strong>影片类型：</strong>{{filmDetail.genres}}</p>
+                    <p><strong>看过人数：</strong>{{filmDetail.collect_count}}人</p>
+                    <p><strong>想看人数：</strong>{{filmDetail.wish_count}}人</p>
+                    <p><strong>评星数：</strong>{{filmDetail.rating.stars}}</p>
+                    <p><strong>影讯页URL：</strong><a href="{{filmDetail.schedule_url}}">{{filmDetail.schedule_url}}</a></p>
+                </div>
+            </div>
+        </div>
+        <!-- <img ng-src="{{filmDetail.images.large}}" alt="{{filmDetail.title}}" class="img-rounded">
+        <p><strong>简介：</strong>{{filmDetail.summary}}</p>
+        <p><strong>又名：</strong>{{filmDetail.aka}}</p>
+        <p><strong>制片国家/地区：</strong>{{filmDetail.countries}}</p>
+        <p><strong>领衔主演：</strong><span ng-repeat="people in filmDetail.casts">{{people.name}}{{$last?'':'、' }}</span></p>
+        <p><strong>影片类型：</strong>{{filmDetail.genres}}</p>
+        <p><strong>看过人数：</strong>{{filmDetail.collect_count}}人</p>
+        <p><strong>想看人数：</strong>{{filmDetail.wish_count}}人</p>
+        <p><strong>评星数：</strong>{{filmDetail.rating.stars}}</p>
+        <p><strong>影讯页URL：</strong><a href="{{filmDetail.schedule_url}}">{{filmDetail.schedule_url}}</a></p> -->
+    </div>
+    <h2>领衔主演</h2>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 col-md-3" ng-repeat="people in filmDetail.casts">
+                <div class="thumbnail">
+                    <img src="{{people.avatars.large}}" alt="{{people.name}}">
+                    <div class="caption">
+                        <p class="text-center">{{people.name}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-
 <div class="shadow" ng-show="loading">
-	<div class="sk-cube-grid">
-	  <div class="sk-cube sk-cube1"></div>
-	  <div class="sk-cube sk-cube2"></div>
-	  <div class="sk-cube sk-cube3"></div>
-	  <div class="sk-cube sk-cube4"></div>
-	  <div class="sk-cube sk-cube5"></div>
-	  <div class="sk-cube sk-cube6"></div>
-	  <div class="sk-cube sk-cube7"></div>
-	  <div class="sk-cube sk-cube8"></div>
-	  <div class="sk-cube sk-cube9"></div>
-	</div>
+    <div class="sk-cube-grid">
+        <div class="sk-cube sk-cube1"></div>
+        <div class="sk-cube sk-cube2"></div>
+        <div class="sk-cube sk-cube3"></div>
+        <div class="sk-cube sk-cube4"></div>
+        <div class="sk-cube sk-cube5"></div>
+        <div class="sk-cube sk-cube6"></div>
+        <div class="sk-cube sk-cube7"></div>
+        <div class="sk-cube sk-cube8"></div>
+        <div class="sk-cube sk-cube9"></div>
+    </div>
 </div>
