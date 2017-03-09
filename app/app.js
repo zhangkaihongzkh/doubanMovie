@@ -59,8 +59,10 @@ angular.module('movieCat', [
         $scope.input = ''; //搜索内容
         $scope.$location = $location; //用于监听地址变化
         //搜索功能
+        //$scope.seacrchDone = false;//搜索输入确认
         $scope.search = function() {
-            if (!$routeParams.category) { //当前在详情页面
+        	//$scope.seacrchDone = true;
+            if (!$routeParams.category) { //当前在电影详情or人物详情页面
                 //console.log(1111);
                 //$location.path('/detail/').replace('/search/');
                 var tmpUrl = '/search/1?q=' + $scope.input;

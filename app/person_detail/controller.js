@@ -35,7 +35,7 @@
 			HttpService.jsonp(doubanAPI,function(data){
 				$scope.personDetail = data;
 				$scope.loading = false;
-				console.log(data);
+				//console.log(data);
 				$scope.$apply();//重新渲染页面
 
 			});

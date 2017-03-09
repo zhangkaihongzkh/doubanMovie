@@ -48,12 +48,12 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right" ng-controller="Nav">
-                    <li auto-focus ng-class="{active:(type == 'search|detail')?'':(type == 'in_theaters') }"><a href="#/in_theaters/1">正在热映</a></li>
-                    <li auto-focus ng-class="{active:(type == 'search|detail')?'':(type == 'coming_soon')}"><a href="#/coming_soon/1">即将上映</a></li>
-                    <li auto-focus ng-class="{active:(type == 'search|detail')?'':(type == 'top250')}"><a href="#/top250/1">TOP250</a></li>
+                    <li auto-focus ng-class="{active:(type == 'search|detail')?'':(type == 'in_theaters') }"><a href="#/in_theaters/1" data-toggle="collapse" data-target="#navbar">正在热映</a></li>
+                    <li auto-focus ng-class="{active:(type == 'search|detail')?'':(type == 'coming_soon')}"><a href="#/coming_soon/1" data-toggle="collapse" data-target="#navbar">即将上映</a></li>
+                    <li auto-focus ng-class="{active:(type == 'search|detail')?'':(type == 'top250')}"><a href="#/top250/1" data-toggle="collapse" data-target="#navbar">TOP250</a></li>
                 </ul>
                 <form class="navbar-form navbar-right" ng-controller="SearchFunc" ng-submit="search()">
-                    <input type="text" class="form-control" placeholder="Search..." ng-model="input">
+                    <input type="text" class="form-control" placeholder="Search..." ng-model="input" >
                 </form>
             </div>
         </div>
