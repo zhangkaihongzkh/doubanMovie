@@ -1,3 +1,127 @@
+.navbar-inverse {
+    background-color: #10a0ea;
+    border-color: #ffffff;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+    color: #fff;
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-text {
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: #fff;
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+    color: #10a0ea;
+    background-color: #ffffff;
+}
+
+
+.navbar-inverse .navbar-toggle {
+    border-color: #0e90d2;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+    background-color: #0e90d2;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+    border-color: #ffffff;
+}
+
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+    color: #fff;
+    background-color: #ffffff;
+}
+
+@media (max-width: 767px) {
+    .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
+        border-color: #ffffff;
+    }
+    .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
+        background-color: #ffffff;
+    }
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+        color: #ffffff;
+    }
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #fff;
+        background-color: transparent;
+    }
+    .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a,
+    .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #fff;
+        background-color: #ffffff;
+    }
+    .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a,
+    .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+    .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+        color: #444;
+        background-color: transparent;
+    }
+}
+
+.navbar-inverse .navbar-link {
+    color: #ffffff;
+}
+
+.navbar-inverse .navbar-link:hover {
+    color: #fff;
+}
+
+.navbar-inverse .btn-link {
+    color: #ffffff;
+}
+
+.navbar-inverse .btn-link:hover,
+.navbar-inverse .btn-link:focus {
+    color: #fff;
+}
+
+.navbar-inverse .btn-link[disabled]:hover,
+fieldset[disabled] .navbar-inverse .btn-link:hover,
+.navbar-inverse .btn-link[disabled]:focus,
+fieldset[disabled] .navbar-inverse .btn-link:focus {
+    color: #444;
+}
+
+.footer {
+    color: #10a0ea;
+}
+
+.badge{
+	background-color: #10a0ea;
+}
+
+
 /*
  * Base structure
  */
@@ -117,7 +241,7 @@ body {
 .sk-cube-grid .sk-cube {
   width: 33%;
   height: 33%;
-  background-color: #333;
+  background-color: #10a0ea;
   float: left;
   -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
           animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
@@ -183,3 +307,5 @@ body {
 .pager a{
 	cursor: pointer;
 }
+
+
