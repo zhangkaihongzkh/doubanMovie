@@ -13,31 +13,22 @@
                     <p><strong>看过人数：</strong>{{filmDetail.collect_count}}人</p>
                     <p><strong>想看人数：</strong>{{filmDetail.wish_count}}人</p>
                     <p><strong>评星数：</strong>{{filmDetail.rating.stars}}</p>
-
                 </div>
             </div>
         </div>
-        <!-- <img ng-src="{{filmDetail.images.large}}" alt="{{filmDetail.title}}" class="img-rounded">
-        <p><strong>简介：</strong>{{filmDetail.summary}}</p>
-        <p><strong>又名：</strong>{{filmDetail.aka}}</p>
-        <p><strong>制片国家/地区：</strong>{{filmDetail.countries}}</p>
-        <p><strong>领衔主演：</strong><span ng-repeat="people in filmDetail.casts">{{people.name}}{{$last?'':'、' }}</span></p>
-        <p><strong>影片类型：</strong>{{filmDetail.genres}}</p>
-        <p><strong>看过人数：</strong>{{filmDetail.collect_count}}人</p>
-        <p><strong>想看人数：</strong>{{filmDetail.wish_count}}人</p>
-        <p><strong>评星数：</strong>{{filmDetail.rating.stars}}</p>
-        <p><strong>影讯页URL：</strong><a href="{{filmDetail.schedule_url}}">{{filmDetail.schedule_url}}</a></p> -->
     </div>
     <h2>领衔主演</h2>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-6 col-md-3" ng-repeat="people in filmDetail.casts">
-                <div class="thumbnail">
-                    <img src="{{people.avatars.large}}" alt="{{people.name}}">
-                    <div class="caption">
-                        <p class="text-center">{{people.name}}</p>
+                <a href="#/person/{{people.id}}">
+                    <div class="thumbnail">
+                        <img src="{{people.avatars.large}}" alt="{{people.name}}">
+                        <div class="caption">
+                            <p class="text-center">{{people.name}}</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </div>

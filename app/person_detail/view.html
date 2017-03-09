@@ -1,0 +1,53 @@
+<div ng-show="!loading">
+    <h1>{{personDetail.name}}</h1>
+    <div class="container">
+        <div class="row">
+            <div class="thumbnail">
+                <img ng-src="{{personDetail.avatars.large}}" alt="{{personDetail.title}}">
+                <div class="caption">
+                    <p><strong>性别：</strong>{{personDetail.gender}}</p>
+                    <p><strong>英文名：</strong>{{personDetail.name_en}}</p>
+                    <p><strong>更多英文名：</strong>{{personDetail.aka_en}}</p>
+                    <p><strong>更多中文名：</strong>{{personDetail.aka}}</p>
+                    <p><strong>出生地：</strong>{{personDetail.born_place}}</p>
+                    <p class="text-right"><a href="{{personDetail.mobile_url}}">更多详情可见豆瓣移动端条目</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2>影视作品</h2>
+    <div class="container-fluid">
+        <div class="row">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="filmItem in personDetail.works">
+                    <a href="#/detail/{{filmItem.subject.id}}">
+                        <div class="media-left media-middle">
+                            <img class="media-object" ng-src="{{filmItem.subject.images.medium}}" alt="{{filmItem.subject.images.alt}}">
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading"><strong>{{filmItem.subject.title}}</strong></h4>
+                            <p><strong>原名：</strong>{{filmItem.subject.original_title}}</p>
+                            <p><strong>担任角色：</strong>{{filmItem.roles}}</p>
+                            <p><strong>类型：</strong><span ng-repeat="typeItem in filmItem.subject.genres">{{typeItem}}{{$last?'':'、 '}}</span></p>
+                            <p><strong>年代：</strong>{{filmItem.subject.year}}</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+<div class="shadow" ng-show="loading">
+    <div class="sk-cube-grid">
+        <div class="sk-cube sk-cube1"></div>
+        <div class="sk-cube sk-cube2"></div>
+        <div class="sk-cube sk-cube3"></div>
+        <div class="sk-cube sk-cube4"></div>
+        <div class="sk-cube sk-cube5"></div>
+        <div class="sk-cube sk-cube6"></div>
+        <div class="sk-cube sk-cube7"></div>
+        <div class="sk-cube sk-cube8"></div>
+        <div class="sk-cube sk-cube9"></div>
+    </div>
+</div>

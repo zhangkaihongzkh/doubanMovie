@@ -314,3 +314,10 @@ body {
   font-size: 20px;
 }
 
+.list-group-item a{
+	color: #000;
+}
+.media-body p{
+	margin: 0 0 1px;
+}
+
